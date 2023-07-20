@@ -1,7 +1,13 @@
-package cgit
+/*
+ * @Date: 2023-07-20 10:22:13
+ * @LastEditTime: 2023-07-20 10:50:26
+ * @Description:
+ */
+package xgit
 
 import (
 	"context"
+
 	"github.com/google/go-github/v51/github"
 )
 

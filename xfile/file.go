@@ -85,6 +85,31 @@ func LineCount(filepath string) int {
 	return count
 }
 
+// ReadLastNLines ...
+func ReadLastNLines(filePath string, n int) ([]string, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	var lines []string
+
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+		if len(lines) > n {
+			lines = lines[1:]
+		}
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return lines, nil
+}
+
 // LineContent ...
 func LineContent(filepath string, numbers ...int) map[int]string {
 	f, err := os.Open(filepath)

@@ -1,11 +1,13 @@
 /*
  * @Date: 2023-07-20 09:34:46
- * @LastEditTime: 2023-07-20 10:00:55
+ * @LastEditTime: 2023-09-07 16:39:33
  * @Description:
  */
 package xerror
 
 import (
+	"fmt"
+	rt "runtime"
 	"sort"
 	"sync"
 )
@@ -68,4 +70,20 @@ func Errors() []*Error {
 		res = append(res, errors[code])
 	}
 	return res
+}
+
+// GetCallerInfo 获取调用栈信息
+func GetCallerInfo(depth int) string {
+	callerInfo := ""
+
+	for i := 1; i < depth+1; i++ {
+		_, file, line, ok := rt.Caller(i)
+		if !ok {
+			return callerInfo
+		}
+
+		callerInfo += fmt.Sprintf("%d : %s#%d \n", i, file, line)
+	}
+
+	return callerInfo
 }

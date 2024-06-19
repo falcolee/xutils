@@ -1,9 +1,10 @@
 package xjson
 
 import (
-	"encoding/json"
 	"strconv"
 	"strings"
+
+	"github.com/goccy/go-json"
 
 	"github.com/falcolee/xutils/xencoding"
 )

@@ -2,10 +2,11 @@ package xconvert
 
 import (
 	"bytes"
-	"encoding/json"
 	"reflect"
 	"regexp"
 	"unicode"
+
+	"github.com/goccy/go-json"
 
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"

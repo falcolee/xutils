@@ -6,7 +6,7 @@
 package xcache
 
 import (
-	"encoding/json"
+	"github.com/goccy/go-json"
 )
 
 type DefaultJSONSerializer struct{}

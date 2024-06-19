@@ -1,9 +1,10 @@
 package xtype
 
 import (
-	"encoding/json"
 	"reflect"
 	"time"
+
+	"github.com/goccy/go-json"
 )
 
 // is ...

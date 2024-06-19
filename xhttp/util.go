@@ -3,7 +3,6 @@ package xhttp
 import (
 	"bytes"
 	"context"
-	"encoding/json"
 	"fmt"
 	"io"
 	"mime/multipart"
@@ -13,6 +12,8 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
+
+	"github.com/goccy/go-json"
 
 	"github.com/falcolee/xutils/xfile"
 )

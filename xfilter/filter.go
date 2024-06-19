@@ -1,9 +1,10 @@
 package xfilter
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
+
+	"github.com/goccy/go-json"
 
 	"github.com/falcolee/xutils/xjson"
 )

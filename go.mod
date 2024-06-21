@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/aklinkert/go-gorm-repository v1.2.0
 	github.com/barasher/go-exiftool v1.7.0
+	github.com/coocood/freecache v1.2.4
 	github.com/disintegration/imaging v1.6.2
 	github.com/fogleman/gg v1.3.0
 	github.com/golang-jwt/jwt v3.2.2+incompatible
@@ -23,8 +24,8 @@ require (
 	golang.design/x/clipboard v0.6.3
 	golang.org/x/exp v0.0.0-20220328175248-053ad81199eb
 	golang.org/x/image v0.5.0
-	golang.org/x/net v0.8.0
-	golang.org/x/text v0.11.0
+	golang.org/x/net v0.24.0
+	golang.org/x/text v0.14.0
 )
 
 require (
@@ -34,13 +35,14 @@ require (
 	github.com/cloudflare/circl v1.1.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/noelyahan/impexp v0.0.0-20201209034304-ee159d84b42f // indirect
 	github.com/noelyahan/mergitrans v0.0.0-20190507035323-73e76dcd7d2a // indirect
-	golang.org/x/crypto v0.7.0 // indirect
+	golang.org/x/crypto v0.22.0 // indirect
 	golang.org/x/oauth2 v0.6.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/protobuf v1.28.0 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 )
 
 require (
@@ -52,7 +54,7 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/exp/shiny v0.0.0-20221205204356-47842c84f3db // indirect
 	golang.org/x/mobile v0.0.0-20210716004757-34ab1303b554 // indirect
-	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/sys v0.19.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/gorm v1.25.2
 )

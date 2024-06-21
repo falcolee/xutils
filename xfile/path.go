@@ -1,6 +1,7 @@
 package xfile
 
 import (
+	"os"
 	"path"
 	"strings"
 )
@@ -28,4 +29,8 @@ func GetFileDir(filepath string) string {
 // GetFileExt ...
 func GetFileExt(file string) string {
 	return strings.ToLower(strings.Trim(path.Ext(file), "."))
+}
+
+func RemoveFile(file string) error {
+	return os.Remove(file)
 }

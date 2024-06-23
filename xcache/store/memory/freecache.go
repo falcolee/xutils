@@ -8,6 +8,7 @@ package memory
 import (
 	"context"
 	"errors"
+	"reflect"
 	"strings"
 	"time"
 
@@ -44,7 +45,19 @@ func NewWithDb(tx *freecache.Cache) *Store {
 // @date 2022-07-02 08:12:11
 func (r *Store) Set(ctx context.Context, key string, value any, ttl time.Duration) error {
 	seconds := ttl.Seconds()
-	bytes := []byte(value.(string))
+	valType := reflect.TypeOf(value)
+	bytes := []byte{}
+	switch valType {
+	case reflect.TypeOf([]byte{}):
+		bytes = []byte(value.([]byte))
+	case reflect.TypeOf(string("")):
+		bytes = []byte(value.(string))
+	case reflect.TypeOf([]uint8{}):
+		bs := value.([]uint8)
+		for _, b := range bs {
+			bytes = append(bytes, byte(b))
+		}
+	}
 	return r.store.Set([]byte(key), bytes, int(seconds))
 }
 

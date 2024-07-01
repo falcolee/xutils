@@ -52,6 +52,8 @@ type (
 
 		// RemoveFromKey 根据缓存key删除缓存
 		RemoveFromKey(ctx context.Context, key string) error
+
+		Clear(ctx context.Context, keys ...string) error
 	}
 )
 
@@ -233,4 +235,9 @@ func (p *Cache) RemoveFromKey(ctx context.Context, key string) error {
 // MemberTagKey 是否缓存数据
 func (p *Cache) MemberTagKey(ctx context.Context, tag string, key string) (bool, error) {
 	return p.store.MemberTagKey(ctx, tag, key)
+}
+
+// Clear 清除缓存
+func (p *Cache) Clear(ctx context.Context, keys ...string) error {
+	return p.store.Clear(ctx, keys...)
 }

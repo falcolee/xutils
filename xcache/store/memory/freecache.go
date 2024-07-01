@@ -174,3 +174,8 @@ func (r *Store) MemberTagKey(ctx context.Context, tag, key string) (bool, error)
 	}
 	return found, nil
 }
+
+func (r *Store) Clear(ctx context.Context, keys ...string) error {
+	r.store.Clear()
+	return nil
+}

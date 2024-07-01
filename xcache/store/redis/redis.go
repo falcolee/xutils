@@ -93,3 +93,18 @@ func (r *Store) RemoveTagKey(ctx context.Context, tag, key string) error {
 func (r *Store) MemberTagKey(ctx context.Context, tag, key string) (bool, error) {
 	return r.store.SIsMember(ctx, tag, key).Result()
 }
+
+func (r *Store) Clear(ctx context.Context, keys ...string) error {
+	if len(keys) > 0 {
+		for _, pattern := range keys {
+			keysQuery, err := r.store.Keys(ctx, pattern+"*").Result()
+			if err != nil {
+				return err
+			}
+			for i := 0; i < len(keysQuery); i++ {
+				r.store.Del(ctx, keys[i])
+			}
+		}
+	}
+	return nil
+}

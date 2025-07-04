@@ -17,6 +17,7 @@ bin/*
 coverage.out
 
 .DS_Store
+.codeif/
 .idea/
 .scannerwork/
 logs/

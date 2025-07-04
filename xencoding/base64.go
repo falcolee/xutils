@@ -30,3 +30,12 @@ func Base64Decode(text string, encodings ...*base64.Encoding) string {
 	}
 	return string(resp)
 }
+
+// Base64DecodeToBytes ...
+func Base64DecodeToBytes(text string, encodings ...*base64.Encoding) ([]byte, error) {
+	resp, err := (encoding(encodings...)).DecodeString(text)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}

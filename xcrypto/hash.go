@@ -18,6 +18,13 @@ func Md5(str string) string {
 	return hex.EncodeToString(h.Sum(nil))
 }
 
+// Md5Hash ...
+func Md5Hash(str string) []byte {
+	h := md5.New()
+	h.Write([]byte(str))
+	return h.Sum(nil)
+}
+
 // Hash ...
 func Hash(str string, seed int) uint64 {
 	dataSha := sha256.Sum256([]byte(str))
@@ -41,9 +48,23 @@ func Sha1(str string) string {
 	return hex.EncodeToString(hash.Sum(nil))
 }
 
+// Sha1Hash ...
+func Sha1Hash(str string) []byte {
+	hash := sha1.New()
+	hash.Write([]byte(str))
+	return hash.Sum(nil)
+}
+
 // Sha256 ...
 func Sha256(str string) string {
 	hash := sha256.New()
 	hash.Write([]byte(str))
 	return hex.EncodeToString(hash.Sum(nil))
+}
+
+// Sha256Hash ...
+func Sha256Hash(str string) []byte {
+	hash := sha256.New()
+	hash.Write([]byte(str))
+	return hash.Sum(nil)
 }
